@@ -4,10 +4,10 @@ import { useEffect, useRef } from 'react';
 import Hls from 'hls.js';
 
 export default function Home() {
-  const videoRef = useRef(null);
+  const videoRef = useRef<any>(null);
 
   useEffect(() => {
-    let hls;
+    let hls: any;
 
     const initializeHls = () => {
       if (videoRef.current) {
@@ -23,12 +23,12 @@ export default function Home() {
           hls.attachMedia(videoRef.current);
 
           hls.on(Hls.Events.MANIFEST_PARSED, () => {
-            videoRef.current.play().catch(error => {
+            videoRef.current.play().catch((error: any) => {
               console.error('Error attempting to play:', error);
             });
           });
 
-          hls.on(Hls.Events.ERROR, (event, data) => {
+          hls.on(Hls.Events.ERROR, (event: any, data: any) => {
             if (data.fatal) {
               switch (data.type) {
                 case Hls.ErrorTypes.NETWORK_ERROR:
