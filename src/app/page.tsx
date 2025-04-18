@@ -62,14 +62,19 @@ export default function Home() {
   }, []);
 
   return (
-    <video
-      ref={videoRef}
-      controls
-      autoPlay
-      muted
-      playsInline
-      className="w-full h-full"
-      style={{ backgroundColor: 'black' }}
-    />
+    <div style={{width: 800, height: 600, marginLeft: "auto", marginRight: "auto"}}>
+      <h1>The best livestream ever</h1>
+      <video
+            ref={videoRef}
+            controls
+            autoPlay
+            muted
+            playsInline
+            className="w-full h-full"
+            style={{ backgroundColor: 'black' }}
+          />
+
+      <a style={{fontSize: 46, textDecoration: "underline"}} href="https://discord.gg/B8UThyn65Y">Join the discord</a>
+    </div>
   );
 }
